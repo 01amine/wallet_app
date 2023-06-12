@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:wallet_app/addCart.dart';
 
 import 'package:wallet_app/buttons.dart';
 import 'package:wallet_app/cards.dart';
@@ -68,7 +69,18 @@ class _HomePageState extends State<HomePage> {
                       shape: BoxShape.circle,
                     ),
                     child: IconButton(
-                        onPressed: () {}, icon: const Icon(Icons.add)),
+                      onPressed: () {
+                        setState(() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const AddCard(),
+                            ),
+                          );
+                        });
+                      },
+                      icon: const Icon(Icons.add),
+                    ),
                   ),
                 ],
               ),
